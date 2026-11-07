@@ -1,0 +1,28 @@
+AMAZONAS v1.13 — FILTRO POR TIPO DE ATENCIÓN EN HISTORIAL
+
+MEJORAS
+- Anulación de pedidos pendientes por Mesa y Para llevar, con confirmación y motivo obligatorio.
+- Anulación de pedidos Para llevar que ya fueron cobrados.
+- Anulación de cobros de Mesa, Mostrador y Para llevar desde Historial.
+- Los pedidos anulados no se eliminan: se conserva la información y la fecha de anulación.
+- Historial: filtros de estado Cobrados / Anulados / Todos, fechas y método.
+- Totales para los registros filtrados: cobrados, anulados, cobros anulados y cantidad de registros.
+- El dashboard omite cobros anulados del total vigente.
+- CSV incluye estado y motivo de anulación.
+- Se conservan los datos locales con clave nova-mesa-v1.
+
+IMPORTANTE
+Anular un cobro no efectúa devolución bancaria o de efectivo. Gestiona reembolsos y conciliación manualmente.
+Si se anula un pedido que ya salió a entrega, se registra la anulación pero no revierte su salida física.
+Los pedidos por mesa guardados antes de esta versión no poseen identificador propio ni fecha original; al anularlos se utiliza la fecha de anulación.
+Los cobros históricos se muestran por fecha original del cobro; usa filtros de fechas acordes para consultarlos.
+
+INSTALACIÓN
+Publicar por HTTPS para instalar como PWA. Respaldar datos en Ajustes antes de actualizar.
+
+NOVEDAD v1.13
+- Historial: filtro adicional por Todos, Mesa, Para llevar y Mostrador.
+- Compatible con fecha, estado (cobrado/anulado) y método de pago.
+- Totales e informe CSV respetan los filtros combinados.
+- Clasificación por origen basada en los registros, incluidos cobros antiguos.
+- Conserva el almacenamiento previo. Exporta un respaldo antes de actualizar.

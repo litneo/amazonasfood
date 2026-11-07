@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#252b43"><meta name="description" content="Gestión de desayunos, almuerzos, mesas y cobros para restaurante.">
+  <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Amazonas | Restaurante</title>
+  <style>
+  :root{color-scheme:dark;--bg:#171c2d;--panel:#252b43;--panel2:#2c3350;--panel3:#333b5b;--stroke:#3d4564;--txt:#f5f6ff;--muted:#a2abc6;--accent:#8995ff;--blue:#6e9bf9;--green:#50d9ad;--red:#ff8298;--amber:#ffcf7b;--radius:20px;--shadow:0 18px 40px #070b1845;font-family:"Ubuntu",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt)}button,input,select,textarea{font:inherit;font-family:inherit}button{cursor:pointer;touch-action:manipulation}button:disabled{cursor:not-allowed;opacity:.4}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #a7b1ff;outline-offset:2px}button{border:0}input,select,textarea{width:100%;min-height:46px;border:1px solid var(--stroke);border-radius:13px;background:#1d2338;color:var(--txt);padding:11px 13px}textarea{resize:vertical}label{font-size:13px;color:var(--muted);display:block;margin-bottom:7px}h1,h2,h3,p{margin-top:0}h1{font-size:27px;letter-spacing:-.8px;margin-bottom:5px}h2{font-size:18px;letter-spacing:-.35px}h3{font-size:15px}small,.muted{color:var(--muted)}strong{font-variant-numeric:tabular-nums}.app{display:flex;min-height:100dvh}.sidebar{width:236px;background:#22283f;border-right:1px solid var(--stroke);padding:27px 16px;display:flex;flex-direction:column;gap:16px;position:sticky;top:0;height:100dvh}.brand{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;padding:8px 9px}.mark{display:grid;place-items:center;width:36px;height:36px;background:linear-gradient(145deg,#9a83f9,#5078cc);border-radius:12px}.nav{display:grid;gap:6px}.nav button{display:flex;align-items:center;gap:11px;text-align:left;background:transparent;color:#b4bdd8;width:100%;min-height:46px;padding:12px 13px;border-radius:13px;font-weight:600}.nav button.active{background:#374166;color:white}.nav button:hover{background:#323a58;color:white}.sidefoot{margin-top:auto;padding:14px 8px;font-size:12px;color:var(--muted);line-height:1.6}.main{flex:1;min-width:0;max-width:1620px;margin:auto;padding:30px 32px 110px}.top{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:25px}.top small{font-size:13px}.pill{border:1px solid var(--stroke);border-radius:40px;padding:10px 14px;color:var(--muted);font-size:12px}.view{display:none}.view.active{display:block}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.card,.panel{background:var(--panel);border:1px solid #353e5d;border-radius:var(--radius);box-shadow:var(--shadow)}.card{padding:20px;min-height:130px}.card .kpi{font-size:28px;display:block;margin:17px 0 4px;letter-spacing:-.7px}.card .symbol{color:var(--accent);font-size:23px;float:right}.panel{padding:20px;margin-bottom:18px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}.section-head h2{margin:0}.btn{min-height:44px;padding:11px 17px;color:var(--txt);background:var(--panel3);border-radius:13px;font-weight:700}.btn.primary{background:linear-gradient(120deg,#7589f1,#5e79e0);color:white}.btn.success{background:#276a5c;color:#eafff6}.btn.danger{background:#643849;color:#ffdbdf}.btn.ghost{background:transparent;border:1px solid var(--stroke)}.btn.sm{min-height:36px;padding:7px 11px;font-size:13px}.btn.icon{min-width:43px;padding:10px}.btn-row{display:flex;gap:9px;flex-wrap:wrap}.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.toolbar input{max-width:270px}.seg{display:flex;gap:5px;background:#191f32;border:1px solid var(--stroke);padding:5px;border-radius:15px}.seg button{padding:10px 15px;background:transparent;border-radius:11px;color:var(--muted);font-weight:700}.seg button.selected{background:#444e79;color:white}.split{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:18px}.order-layout{display:grid;grid-template-columns:minmax(0,1fr) 365px;gap:16px;align-items:start}.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px}.product{position:relative;text-align:left;min-height:118px;border:1px solid var(--stroke);padding:16px;background:linear-gradient(145deg,#313a59,#292f49);border-radius:16px;color:var(--txt);display:flex;flex-direction:column;justify-content:space-between;gap:12px}.product:hover{border-color:#8995ff}.product .price{color:#9eafff;font-weight:800;font-size:18px}.product .name{font-weight:700;line-height:1.25}.product .category{font-size:11px;color:var(--muted)}.ticket{position:sticky;top:15px}.table-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:12px}.table-tile{background:var(--panel2);border:1px solid var(--stroke);border-radius:17px;padding:17px;min-height:130px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;color:var(--txt);text-align:left}.table-tile b{font-size:19px}.table-tile.busy{border-color:#c59b63;background:#383447}.table-tile.selected{outline:2px solid var(--accent)}.status{font-size:12px;border-radius:20px;padding:5px 9px;background:#293f44;color:var(--green)}.status.busy{color:var(--amber);background:#4c3e36}.order-item{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border-bottom:1px solid var(--stroke);padding:12px 0}.order-item .line{font-size:13px;color:var(--muted);margin-top:4px}.qty{display:flex;align-items:center;gap:9px}.qty button{height:34px;width:34px;border-radius:10px;color:var(--txt);background:#475175;font-size:21px}.total{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--stroke);padding-top:15px;margin-top:13px;font-size:21px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.form-grid .full{grid-column:1/-1}.form-actions{grid-column:1/-1;display:flex;justify-content:flex-end;gap:9px;margin-top:5px}.list{width:100%;border-collapse:collapse}.list th,.list td{padding:12px 10px;border-bottom:1px solid var(--stroke);text-align:left;font-size:13px}.list th{color:var(--muted);font-size:12px}.table-scroll{overflow-x:auto}.empty{text-align:center;color:var(--muted);padding:35px 12px;line-height:1.6}.badge{display:inline-block;padding:5px 9px;border-radius:20px;background:#3d4163;color:#d2d8ff;font-size:12px}.badge.cash{background:#274e48;color:var(--green)}.badge.qr{background:#3c466c;color:#b5c8ff}.salechart{display:flex;align-items:end;gap:10px;height:190px;padding:15px 8px 0;border-bottom:1px solid var(--stroke)}.barwrap{flex:1;min-width:0;text-align:center;font-size:11px;color:var(--muted)}.bar{height:var(--h);min-height:3px;max-height:145px;background:linear-gradient(180deg,#92a0ff,#5a69bd);border-radius:7px 7px 2px 2px;margin-bottom:8px}.recent{display:grid;gap:12px}.recent-item{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--stroke);padding:5px 0 13px;gap:15px}.recent-item:last-child{border:0}.modal-backdrop{position:fixed;inset:0;z-index:50;background:#080b14ba;display:none;align-items:center;justify-content:center;padding:18px}.modal-backdrop.open{display:flex}.modal{background:var(--panel);border:1px solid #556081;width:min(560px,100%);max-height:min(90dvh,900px);overflow:auto;border-radius:22px;padding:23px;box-shadow:0 20px 90px #0009}.modal h2{margin-bottom:18px}.modal .field{margin-bottom:14px}.modal .totbig{font-size:36px;font-weight:800;margin:15px 0;color:var(--green)}.mobilebar{display:none}.toast{position:fixed;z-index:100;bottom:24px;right:22px;max-width:min(420px,90vw);padding:14px 18px;border-radius:14px;background:#46517b;color:white;box-shadow:var(--shadow);display:none}.notice{border:1px solid #827452;background:#484031;color:#ffe1a8;padding:13px 16px;border-radius:13px;margin-bottom:18px;font-size:13px}.hint{font-size:12px;color:var(--muted);line-height:1.6}.inline-check{display:flex;align-items:center;gap:8px}.inline-check input{width:auto;min-height:auto}.detail{font-size:12px;line-height:1.7;color:var(--muted)}.sidefields{display:grid;gap:10px}.headerline{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.hide{display:none!important}
+  @media(max-width:1100px){.sidebar{width:200px}.main{padding:24px 18px 100px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.order-layout{grid-template-columns:minmax(0,1fr) 310px}.split{grid-template-columns:1fr}}
+  @media(max-width:800px){.sidebar{display:none}.mobilebar{position:fixed;z-index:30;display:grid;grid-template-columns:repeat(5,1fr);bottom:0;left:0;right:0;min-height:calc(65px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);background:#22283ff7;backdrop-filter:blur(14px);border-top:1px solid var(--stroke)}.mobilebar button{background:transparent;color:var(--muted);font-size:11px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}.mobilebar button span{font-size:19px}.mobilebar button.active{color:#bec5ff}.main{padding:20px 14px 110px}.top{margin-bottom:18px}.order-layout{grid-template-columns:1fr}.ticket{position:static}}
+  @media(max-width:520px){h1{font-size:23px}.cards{gap:10px}.card{padding:14px;min-height:110px}.card .kpi{font-size:21px}.panel{padding:14px}.form-grid{grid-template-columns:1fr}.toolbar input{max-width:100%}.seg button{padding:9px 10px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.table-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top .pill{display:none}.btn{padding:10px 12px}.list th,.list td{padding:10px 8px}}
+
+  /* Amazonas 1.3 · Ajuste de escala adaptable y tipografía contemporánea */
+  html{min-width:320px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{font-size:clamp(14px,0.28vw + 13px,16px);line-height:1.48;overflow-x:hidden;font-feature-settings:"cv11","ss01";font-synthesis:none}
+  .app,.main,.panel,.card,.split,.order-layout,.ticket,.toolbar,.section-head{min-width:0}
+  .main{width:100%;max-width:1700px;padding:clamp(16px,2.2vw,36px) clamp(14px,2.2vw,36px) 110px}
+  .sidebar{flex:0 0 clamp(204px,17vw,252px);width:auto;min-width:0;padding:clamp(16px,2vw,27px) 12px}
+  .brand{font-size:clamp(17px,1.35vw,20px);letter-spacing:-.6px;white-space:nowrap}
+  .nav button{font-size:14px;letter-spacing:-.12px}
+  h1{font-size:clamp(23px,2vw,31px);font-weight:750;letter-spacing:-.045em}
+  h2{font-size:clamp(16px,1.25vw,20px);font-weight:720;letter-spacing:-.025em}
+  h3{font-weight:700;letter-spacing:-.018em}
+  .card,.panel{border-radius:clamp(15px,1.6vw,21px)}
+  .card{padding:clamp(14px,1.45vw,22px)}
+  .card .kpi{font-size:clamp(20px,2vw,31px);letter-spacing:-.045em;overflow-wrap:anywhere}
+  .cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(9px,1vw,16px)}
+  .split{grid-template-columns:minmax(0,1.6fr) minmax(270px,1fr)}
+  .order-layout{grid-template-columns:minmax(0,1fr) clamp(290px,29vw,385px)}
+  .product-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,155px),1fr))}
+  .table-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,145px),1fr))}
+  .salechart{gap:clamp(3px,.7vw,10px);overflow:hidden}
+  .barwrap{font-size:clamp(9px,.75vw,11px);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .barwrap small{font-size:clamp(8px,.7vw,11px)}
+  .toolbar input{max-width:min(100%,300px)}
+  .list{min-width:580px}.table-scroll{width:100%;max-width:100%;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+  .modal{max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overscroll-behavior:contain}
+  .version-label{color:#c1cbff;font-size:12px;font-weight:750;letter-spacing:.02em}
+  button,input,select,textarea{-webkit-tap-highlight-color:transparent}
+  .product,.table-tile,.btn{transition:background-color .16s ease,border-color .16s ease,transform .16s ease}
+  .product:active,.table-tile:active,.btn:active{transform:scale(.985)}
+  @media(min-width:801px) and (max-width:1250px){
+    .sidebar{flex-basis:194px;padding-left:10px;padding-right:10px}
+    .main{padding:22px 16px 90px}
+    .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .split{grid-template-columns:1fr}
+    .order-layout{grid-template-columns:minmax(0,1fr) 290px;gap:12px}
+    .panel{padding:16px}
+    .product-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,138px),1fr))}
+  }
+  @media(max-width:800px){
+    .sidebar{display:none}
+    .main{padding:clamp(13px,2.5vw,24px) clamp(12px,2.5vw,24px) calc(100px + env(safe-area-inset-bottom))}
+    .mobilebar{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));padding:5px 4px calc(5px + env(safe-area-inset-bottom));min-height:calc(69px + env(safe-area-inset-bottom));gap:0}
+    .mobilebar button{font-size:clamp(9px,1.5vw,11px);min-width:0;min-height:58px;padding:5px 1px;line-height:1.15;white-space:nowrap}
+    .mobilebar button span{font-size:21px;line-height:1.1}
+    .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .split,.order-layout{grid-template-columns:minmax(0,1fr)}
+    .ticket{position:static}
+    .top{gap:10px;flex-wrap:wrap}
+    .top .pill{display:block;padding:8px 10px}
+    .panel{padding:clamp(13px,2.8vw,20px)}
+    .product-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,145px),1fr))}
+    .modal-backdrop{padding:12px}
+  }
+  @media(max-width:480px){
+    .main{padding:14px 11px calc(96px + env(safe-area-inset-bottom))}
+    .top .pill{display:none}
+    .card{min-height:110px;padding:13px}
+    .card .kpi{font-size:clamp(18px,5vw,23px)}
+    .card .muted{font-size:12px}
+    .panel{padding:13px;margin-bottom:12px}
+    .cards{gap:9px;margin-bottom:12px}
+    .section-head{align-items:flex-start}
+    .section-head h2{line-height:1.3}
+    .form-grid{grid-template-columns:minmax(0,1fr)}
+    .product-grid,.table-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+    .product{min-height:115px;padding:12px}
+    .table-tile{min-height:115px;padding:12px}
+    .seg button{padding:9px 9px;font-size:12px}
+    .toolbar{align-items:stretch}
+    .toolbar>input,.toolbar>select{flex:1 1 100%;max-width:none!important}
+    .toolbar>label{flex:1 1 135px}
+    .total{font-size:19px}
+    .modal{border-radius:19px;padding:16px}
+    .modal .totbig{font-size:30px}
+    .salechart{gap:4px}
+    .barwrap small{display:none}
+    .form-actions{flex-wrap:wrap}
+    .form-actions .btn{flex:1 1 125px}
+  }
+  @media(max-width:365px){
+    .mobilebar button{font-size:9px}
+    .mobilebar button span{font-size:19px}
+    .card .symbol{font-size:17px}
+    .card .kpi{font-size:18px}
+    .btn-row .btn{flex:1 1 auto}
+  }
+  @media(orientation:landscape) and (max-height:540px) and (max-width:800px){
+    .mobilebar{min-height:56px}
+    .mobilebar button{min-height:48px}
+    .main{padding-bottom:75px}
+    .modal{max-height:calc(100dvh - 12px)}
+  }
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+  
+  /* v1.3: El importe se mantiene visible sobre la grilla al desplazarse. */
+  .sales-total-banner{position:sticky;top:8px;z-index:12;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:17px 23px;margin:0 0 17px;background:linear-gradient(110deg,#3b477a,#293758 72%,#293f4c);border:1px solid #7689df;border-radius:20px;box-shadow:0 12px 32px #090e2488;min-width:0}
+  .sales-total-copy{display:grid;gap:3px;min-width:0}
+  .sales-total-eyebrow{color:#c4ceff;letter-spacing:.115em;font-size:10px;font-weight:800}
+  .sales-total-caption{color:#fff;font-size:clamp(15px,1.65vw,20px);font-weight:750;letter-spacing:-.02em}
+  .sales-total-value{font-size:clamp(26px,3.2vw,42px);line-height:1.1;letter-spacing:-.045em;color:#74f2c5;font-weight:850;white-space:nowrap;font-variant-numeric:tabular-nums}
+  /* v1.5: accesos cómodos en tablet y barra horizontal desplazable en móviles. */
+  @media(max-width:800px){.mobilebar{grid-template-columns:repeat(9,minmax(78px,1fr));overflow-x:auto;overscroll-behavior-x:contain}.mobilebar button{min-width:78px;padding:3px 5px}.mobilebar::-webkit-scrollbar{height:3px}.mobilebar::-webkit-scrollbar-thumb{background:#5c6b9a}}
+  @media(max-width:520px){.sales-total-banner{top:5px;padding:13px 14px;border-radius:16px;gap:8px;margin-bottom:12px}.sales-total-caption{font-size:14px}.sales-total-value{font-size:clamp(23px,6.8vw,32px)}.sales-total-eyebrow{font-size:9px}}
+  @media(max-width:365px){.sales-total-banner{padding:12px 10px}.sales-total-value{font-size:22px}}
+  .dispatch-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.badge.unpaid{background:#5a4539;color:#ffdfad}[hidden]{display:none!important}@media(max-width:680px){.dispatch-kpis{grid-template-columns:1fr 1fr}.dispatch-kpis .card:first-child{grid-column:1/-1}.dispatch-kpis .card{min-height:105px;padding:15px}.dispatch-kpis .card .kpi{margin-top:9px}}
+
+  /* Amazonas v1.13: menú principal reorganizado */
+  .payment-summary{display:grid;gap:20px;min-width:0}
+  .payment-summary-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--stroke);padding-bottom:17px}
+  .payment-summary-top>div{display:grid;gap:6px}
+  .payment-summary-total{font-size:clamp(27px,3.6vw,38px);letter-spacing:-.7px;color:var(--green);overflow-wrap:anywhere;line-height:1.1}
+  .payment-methods{display:grid;gap:14px}
+  .payment-method{border:1px solid var(--stroke);background:#292f49;padding:17px;border-radius:15px;min-width:0}
+  .payment-method-head,.payment-method-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .payment-method-head strong{font-size:clamp(18px,2vw,24px);overflow-wrap:anywhere}
+  .payment-method-label{display:flex;align-items:center;gap:9px;font-weight:750}
+  .payment-method-icon{display:grid;place-items:center;width:31px;height:31px;border-radius:10px;background:#2f554d;color:#92ebc3}
+  .payment-method.qr .payment-method-icon{background:#3d4879;color:#c3caff}
+  .payment-track{margin:15px 0 11px;height:12px;border-radius:999px;overflow:hidden;background:#171d30}
+  .payment-fill{height:100%;background:linear-gradient(90deg,#42b897,#88e5be);border-radius:999px;transition:width .15s ease}
+  .payment-method.qr .payment-fill{background:linear-gradient(90deg,#687eea,#a0aefa)}
+  .payment-method-foot{font-size:12px;color:var(--muted)}
+  .payment-caption{margin:0}
+  @media(max-width:480px){.payment-method{padding:13px}.payment-method-head strong{font-size:20px}}
+
+  /* Amazonas v1.13: sidebar plegable con espacio útil ampliado */
+  .app{width:100%;min-width:0}
+  .sidebar{flex:0 0 236px;width:236px;min-width:0;transition:flex-basis .22s ease,width .22s ease,padding .22s ease;overflow-x:hidden;z-index:35}
+  .main{max-width:none;width:100%;min-width:0;transition:padding .2s ease}
+  .sidebar-head{display:flex;align-items:center;gap:2px;min-width:0;justify-content:space-between}
+  .sidebar-head .brand{min-width:0;padding:8px 4px;white-space:nowrap;overflow:hidden}
+  .sidebar-text{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .sidebar-collapse,.sidebar-close,.mobile-menu-toggle{color:#dce4ff;background:#36405f;border:1px solid #566288;border-radius:12px;min-height:42px;min-width:42px;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+  .sidebar-close,.mobile-menu-toggle{display:none}
+  .sidebar-collapse:hover,.sidebar-close:hover,.mobile-menu-toggle:hover{background:#4a5883}
+  .nav button{min-width:0;overflow:hidden;white-space:nowrap}
+  .nav button .nav-icon{display:inline-flex;justify-content:center;align-items:center;flex:0 0 21px;font-size:21px;line-height:1}
+  .nav button .nav-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sidebar-scrim{display:none}
+  .page-heading{display:grid;grid-template-columns:auto 1fr;column-gap:0;min-width:0}
+  .page-heading h1,.page-heading small{grid-column:2;min-width:0}
+  .app.sidebar-collapsed .sidebar{flex-basis:76px;width:76px;padding-left:8px;padding-right:8px}
+  .app.sidebar-collapsed .sidebar-head{flex-direction:column;gap:12px}
+  .app.sidebar-collapsed .sidebar-head .brand{padding:0;justify-content:center}
+  .app.sidebar-collapsed .sidebar-text,.app.sidebar-collapsed .nav-label,.app.sidebar-collapsed .sidefoot{display:none}
+  .app.sidebar-collapsed .sidebar-collapse{transform:rotate(180deg);min-width:44px}
+  .app.sidebar-collapsed .nav button{justify-content:center;padding:10px 5px;min-height:52px}
+  .app.sidebar-collapsed .nav button .nav-icon{font-size:23px;flex-basis:auto}
+  .app.sidebar-collapsed .mark{width:38px;height:38px}
+  @media (min-width:801px) and (max-width:1100px){.sidebar{flex-basis:200px;width:200px}.app.sidebar-collapsed .sidebar{flex-basis:76px;width:76px}}
+  @media (max-width:800px){
+    .sidebar{display:flex;position:fixed;left:0;top:0;bottom:0;height:100dvh;width:min(290px,85vw);max-width:85vw;flex-basis:auto;padding:18px 14px;overflow-y:auto;overflow-x:hidden;transform:translateX(-105%);transition:transform .22s ease;box-shadow:20px 0 60px #0008}
+    .app.sidebar-collapsed .sidebar{flex-basis:auto;width:min(290px,85vw);padding:18px 14px}
+    .app.sidebar-collapsed .sidebar-head{flex-direction:row;gap:2px}
+    .app.sidebar-collapsed .sidebar-text,.app.sidebar-collapsed .nav-label,.app.sidebar-collapsed .sidefoot{display:initial}
+    .app.sidebar-collapsed .nav button{justify-content:flex-start;padding:12px 13px;min-height:46px}
+    .app.sidebar-collapsed .sidebar-head .brand{padding:8px 4px}
+    .app.sidebar-collapsed .mark{width:36px;height:36px}
+    .sidebar-close,.mobile-menu-toggle{display:grid}
+    .sidebar-collapse{display:none}
+    .app.mobile-sidebar-open .sidebar{transform:translateX(0)}
+    .sidebar-scrim:not([hidden]){display:block;position:fixed;inset:0;z-index:34;background:#080c1abd;backdrop-filter:blur(3px)}
+    .mobile-menu-toggle{grid-row:1/3;grid-column:1;align-self:center;margin-right:12px}
+    .page-heading{column-gap:0}
+    .main{width:100%}
+  }
+  @media (max-width:470px){.top{align-items:flex-start}.top .pill{padding:9px 10px;max-width:41%;font-size:11px}.page-heading h1{font-size:24px}.mobile-menu-toggle{min-width:40px;min-height:40px}}
+  @media (prefers-reduced-motion:reduce){.sidebar,.main{transition:none}}
+.danger-btn{background:rgba(226,76,94,.13);border:1px solid rgba(226,76,94,.5);color:#ff9da9}.danger-btn:hover{background:rgba(226,76,94,.25)}.history-totals{margin:16px 0 18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}.history-totals .kpi{font-size:clamp(1.05rem,2vw,1.6rem)}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="appSidebar" aria-label="Navegación principal"><div class="sidebar-head"><div class="brand"><span class="mark">✦</span><span class="sidebar-text">Amazonas</span></div><button class="sidebar-collapse" id="sidebarCollapse" type="button" aria-label="Contraer menú lateral" title="Contraer menú lateral" aria-controls="appSidebar" aria-expanded="true">❮</button><button class="sidebar-close" id="sidebarClose" type="button" aria-label="Cerrar menú">✕</button></div><nav class="nav" id="sidebarNav" aria-label="Módulos"></nav><div class="sidefoot"><span class="version-label">Amazonas v1.13</span><br><span id="sideDate"></span></div></aside>
+  <div class="sidebar-scrim" id="sidebarScrim" hidden></div>
+  <main class="main">
+    <header class="top"><div class="page-heading"><button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Abrir menú" aria-controls="appSidebar" aria-expanded="false" title="Mostrar menú">☰</button><h1 id="pageTitle">Dashboard</h1><small id="pageSubtitle">Resumen de operaciones</small></div><div class="pill" id="todayLabel"></div></header>
+    
+    <section class="view active" id="view-dashboard"><div class="cards" id="kpis"></div><div class="split"><div class="panel"><div class="section-head"><h2>Cobros de hoy por método de pago</h2></div><div id="chart"></div></div><div class="panel"><div class="section-head"><h2>Últimos cobros</h2><button class="btn sm" data-go="historial">Ver todos</button></div><div class="recent" id="recent"></div></div></div><div class="panel"><div class="section-head"><h2>Accesos rápidos</h2></div><div class="btn-row"><button class="btn primary" data-go="ventas">＋ Nueva venta</button><button class="btn" data-go="mesas">▦ Ver mesas</button><button class="btn" data-go="llevar">▣ Pedido para llevar</button><button class="btn" data-go="productos">＋ Crear producto</button></div></div></section>
+    <section class="view" id="view-ventas"><div class="sales-total-banner" role="status" aria-label="Total del pedido actual"><div class="sales-total-copy"><span class="sales-total-eyebrow">VENTA EN CURSO</span><span class="sales-total-caption">Total del pedido</span></div><strong id="orderTotal" class="sales-total-value" aria-live="polite" aria-atomic="true">Bs 0,00</strong></div><div class="order-layout"><div class="panel"><div class="section-head"><h2>Venta rápida</h2><div class="seg" id="mealTabs"><button data-meal="Desayuno">Desayunos</button><button data-meal="Almuerzo">Almuerzos</button></div></div><div class="toolbar" style="margin-bottom:16px"><input id="productSearch" aria-label="Buscar producto" placeholder="Buscar producto..."><span class="hint">Toca un producto para agregarlo</span></div><div class="product-grid" id="salesProducts"></div></div><div class="panel ticket"><div class="section-head"><h2>Pedido actual</h2><button class="btn sm ghost" id="clearOrder">Limpiar</button></div><div class="field"><label for="orderTable">Destino del pedido</label><select id="orderTable"></select></div><div id="orderItems"></div><div class="sidefields" style="margin-top:18px"><button class="btn primary" id="saveOrder">Guardar pedido en mesa</button><button class="btn success" id="openPayment">Cobrar ahora</button><p class="hint">Para mesas ocupadas, agrega productos al pedido pendiente. Los cobros cierran el pedido completo.</p></div></div></div></section>
+    <section class="view" id="view-llevar">
+      <div class="sales-total-banner" role="status" aria-label="Total del pedido para llevar"><div class="sales-total-copy"><span class="sales-total-eyebrow">PEDIDO PARA LLEVAR</span><span class="sales-total-caption">Total del pedido</span></div><strong id="takeTotal" class="sales-total-value" aria-live="polite">Bs 0,00</strong></div>
+      <div class="panel"><div class="section-head"><h2>Datos de la persona que realiza el pedido</h2><span class="badge">Para llevar</span></div>
+        <div class="form-grid"><div><label for="takeName">Nombre completo *</label><input id="takeName" autocomplete="name" maxlength="90" placeholder="Nombre de la persona" required></div><div><label for="takeCompany">Empresa donde trabaja *</label><input id="takeCompany" maxlength="90" autocomplete="organization" placeholder="Nombre de la empresa" required></div><div class="full"><label for="takePhone">Celular *</label><input id="takePhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="Ej. 71234567 o +59171234567" required><p class="hint">Número boliviano de 8 dígitos o internacional con prefijo + y 7 a 15 dígitos.</p></div></div>
+      </div>
+      <div class="order-layout"><div class="panel"><div class="section-head"><h2>Productos para llevar</h2><div class="seg" id="takeMealTabs"><button type="button" data-take-meal="Desayuno">Desayunos</button><button type="button" data-take-meal="Almuerzo">Almuerzos</button></div></div><div class="toolbar" style="margin-bottom:16px"><input id="takeSearch" aria-label="Buscar productos para llevar" placeholder="Buscar producto..."><span class="hint">Toca el producto para agregarlo</span></div><div class="product-grid" id="takeProducts"></div></div>
+        <div class="panel ticket"><div class="section-head"><h2>Detalle para llevar</h2><button class="btn sm ghost" id="takeClear" type="button">Limpiar</button></div><div id="takeItems"></div><div class="sidefields" style="margin-top:18px"><button class="btn primary" id="takeSave" type="button">Guardar pedido para llevar</button><button class="btn success" id="takePayNow" type="button">Cobrar pedido ahora</button><p class="hint">Guardar deja el pedido pendiente; cobrar ahora lo registra directamente como pagado.</p></div></div></div>
+      <div class="panel"><div class="section-head"><h2>Seguimiento de pedidos</h2><button class="btn primary" type="button" data-go="despachos">Ver pantalla Llevar →</button></div><p class="hint">Controla la salida de cada pedido en Llevar, incluso si ya fue cobrado.</p></div>
+    </section>
+    <section class="view" id="view-mesas"><div class="panel"><div class="section-head"><h2>Estado de mesas</h2><span class="hint">Selecciona una mesa para ver o completar el pedido</span></div><div class="table-grid" id="tablesGrid"></div></div><div class="panel" id="tableDetail"><div class="empty">Selecciona una mesa para ver sus pedidos.</div></div></section>
+    <section class="view" id="view-despachos">
+      <div class="cards dispatch-kpis"><div class="card"><div class="muted">Pendientes de salida</div><strong class="kpi" id="dispatchCount">0</strong></div><div class="card"><div class="muted">Cobrados sin salir</div><strong class="kpi" id="dispatchPaid">0</strong></div><div class="card"><div class="muted">Sin cobrar y sin salir</div><strong class="kpi" id="dispatchUnpaid">0</strong></div></div>
+      <div class="panel"><div class="section-head"><h2>Pedidos que todavía no salieron</h2><button class="btn primary" data-go="llevar" type="button">＋ Nuevo pedido</button></div><p class="hint">El pago y la entrega se controlan por separado. Los pedidos cobrados siguen aquí hasta registrar su salida.</p><div class="table-scroll"><table class="list"><thead><tr><th>Pedido / fecha</th><th>Persona / empresa / celular</th><th>Productos</th><th>Total</th><th>Pago</th><th>Acciones</th></tr></thead><tbody id="dispatchRows"></tbody></table></div></div>
+      <div class="panel" id="shippedUnpaidPanel" hidden><div class="section-head"><h2>Salieron, pero siguen pendientes de cobro</h2></div><p class="hint">Se conservan aquí para no perder el seguimiento del dinero pendiente.</p><div class="table-scroll"><table class="list"><thead><tr><th>Pedido / fecha</th><th>Persona / empresa / celular</th><th>Productos</th><th>Total</th><th>Pago</th><th>Acciones</th></tr></thead><tbody id="shippedUnpaidRows"></tbody></table></div></div>
+    </section>
+    <section class="view" id="view-productos"><div class="panel"><div class="section-head"><h2>Catálogo de desayunos y almuerzos</h2><button class="btn primary" id="addProduct">＋ Nuevo producto</button></div><div class="toolbar" style="margin-bottom:14px"><input id="catalogSearch" placeholder="Buscar en el catálogo..." aria-label="Buscar catálogo"><select id="catalogFilter" style="max-width:190px"><option value="">Todas las categorías</option><option>Desayuno</option><option>Almuerzo</option></select></div><div class="table-scroll"><table class="list"><thead><tr><th>Producto</th><th>Categoría</th><th>Precio</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="productRows"></tbody></table></div></div></section>
+    <section class="view" id="view-historial"><div class="panel"><div class="section-head"><h2>Historial de pedidos y cobros</h2><button class="btn" id="exportSales">Exportar CSV</button></div><div class="toolbar" style="margin-bottom:15px"><label>Desde <input type="date" id="dateFrom"></label><label>Hasta <input type="date" id="dateTo"></label><label>Estado <select id="statusFilter"><option value="">Todos</option><option value="Cobrado">Cobrados</option><option value="Anulado">Anulados</option></select></label><label>Tipo de atención <select id="originFilter" aria-label="Filtrar por tipo de atención"><option value="">Todos</option><option value="mesa">Mesa</option><option value="llevar">Para llevar</option><option value="mostrador">Mostrador</option></select></label><label>Método <select id="payFilter"><option value="">Todos</option><option value="Efectivo">Efectivo</option><option value="QR">QR</option><option value="Sin cobrar">Sin cobrar</option></select></label></div><div class="cards history-totals" id="historyTotals" aria-live="polite"></div><p class="hint">Los importes anulados son informativos; no se consideran cobros vigentes. Anular un cobro no devuelve dinero automáticamente.</p><div class="table-scroll"><table class="list"><thead><tr><th>Fecha</th><th>N.º</th><th>Origen / Cliente</th><th>Productos</th><th>Método</th><th>Estado</th><th>Total</th><th>Acciones</th></tr></thead><tbody id="saleRows"></tbody></table></div><p class="hint" id="salesSummary"></p></div></section>
+    <section class="view" id="view-config"><div class="panel"><div class="section-head"><h2>Configuración del restaurante</h2></div><form id="settingsForm" class="form-grid" autocomplete="off"><div><label for="restName">Nombre comercial</label><input id="restName" maxlength="70" required></div><div><label for="tableCount">Número de mesas (1 a 40)</label><input id="tableCount" type="number" min="1" max="40" step="1" required></div><div class="form-actions"><button class="btn primary" type="submit">Guardar configuración</button></div></form></div><div class="panel"><div class="section-head"><h2>Respaldo de información</h2></div><p class="hint">Exporta toda la información como JSON. El respaldo permite restaurar el catálogo, pedidos, mesas y cobros en esta tablet.</p><div class="btn-row"><button class="btn primary" id="backupBtn">Descargar respaldo JSON</button><button class="btn" id="restoreBtn">Restaurar respaldo</button><input type="file" accept=".json,application/json" id="restoreFile" hidden></div><p class="hint">Importar reemplaza los datos locales. Se solicita confirmación antes de continuar. No contiene sincronización con otros equipos.</p></div></section>
+  </main>
+</div>
+<nav class="mobilebar" id="mobileNav" aria-label="Menú principal"></nav>
+<div class="modal-backdrop" id="productModal" role="presentation"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="productTitle"><div class="section-head"><h2 id="productTitle">Nuevo producto</h2><button class="btn icon sm" data-close="productModal" aria-label="Cerrar">✕</button></div><form id="productForm" class="form-grid" autocomplete="off"><input type="hidden" id="productId"><div class="full"><label for="prodName">Nombre del producto *</label><input id="prodName" maxlength="90" required placeholder="Ej. Desayuno continental"></div><div><label for="prodMeal">Categoría *</label><select id="prodMeal" required><option>Desayuno</option><option>Almuerzo</option></select></div><div><label for="prodPrice">Precio en Bs *</label><input id="prodPrice" type="number" min="0.01" max="99999.99" step="0.01" required inputmode="decimal"></div><div class="full"><label class="inline-check"><input type="checkbox" id="prodActive" checked> Disponible para la venta</label></div><div class="form-actions"><button type="button" class="btn" data-close="productModal">Cancelar</button><button type="submit" class="btn primary">Guardar producto</button></div></form></div></div>
+<div class="modal-backdrop" id="paymentModal" role="presentation"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="paymentTitle"><div class="section-head"><h2 id="paymentTitle">Cobrar pedido</h2><button class="btn icon sm" data-close="paymentModal" aria-label="Cerrar">✕</button></div><div class="hint" id="paymentOrigin"></div><div class="totbig" id="paymentTotal">Bs 0,00</div><div class="field"><label for="paymentMethod">Método de pago</label><div class="seg"><button data-method="Efectivo" type="button" aria-pressed="false">Efectivo</button><button class="selected" data-method="QR" type="button" aria-pressed="true">QR</button></div><input type="hidden" id="paymentMethod" value="QR"></div><div class="field" id="cashField"><label for="cashReceived">Efectivo recibido (Bs)</label><input id="cashReceived" type="number" min="0" max="999999.99" step="0.01" inputmode="decimal" autocomplete="off" placeholder="Ingresa el importe entregado" required></div><div class="headerline" id="changeField"><span>Cambio a entregar</span><strong id="changeTotal">Bs 0,00</strong></div><p class="hint" id="qrHint" hidden>Confirma en tu banco que el pago QR fue recibido antes de registrar el cobro. Esta aplicación no verifica transacciones bancarias.</p><div class="btn-row" style="justify-content:flex-end;margin-top:24px"><button class="btn" data-close="paymentModal">Cancelar</button><button class="btn success" id="confirmPayment">Confirmar cobro</button></div></div></div>
+<div class="toast" role="status" id="toast"></div>
+<script src="app.js" defer></script>
+</body></html>
